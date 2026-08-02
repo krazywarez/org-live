@@ -1,0 +1,21 @@
+┌──────────────────────────────────────────────────────────────┐
+│  O R G - L I V E                           [ KRZ ]   krz.sh  │
+└──────────────────────────────────────────────────────────────┘
+
+WHAT
+  org-live is a live environment for writing and editing org-mode.
+  https://org.cmc.pub
+
+DOES
+  - plain text editor with capitalization, autocorrect, spellcheck
+  - html output of the written org-mode
+  - download the org-mode to a file
+  - download the parsed html to a file
+
+SCREENSHOTS
+  screenshots/light_preview.png
+  screenshots/dark_preview.png
+
+┌──────────────────────────────────────────────────────────────┐
+│  krz.sh                                                      │
+└──────────────────────────────────────────────────────────────┘
