@@ -2,7 +2,7 @@
 
 * what
 org-live is a live environment for writing and editing org-mode.
-https://org.cmc.pub
+https://org.krz.sh
 
 * does
 - plain text editor with capitalization, autocorrect, spellcheck
