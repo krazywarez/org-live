@@ -6,13 +6,18 @@ https://org.krz.sh
 
 * does
 - plain text editor with capitalization, autocorrect, spellcheck
+- org syntax highlighting and line numbers in the editor
+- light and dark themes, following the system setting
 - html output of the written org-mode
 - download the org-mode to a file
 - download the parsed html to a file
 
 * screenshots
-- screenshots/light_preview.png
-- screenshots/dark_preview.png
+#+CAPTION: org-live in light mode
+[[file:screenshots/light_preview.png]]
+
+#+CAPTION: org-live in dark mode
+[[file:screenshots/dark_preview.png]]
 
 * build
 Swift compiled to WebAssembly with [[https://elementary.codes][ElementaryUI]],

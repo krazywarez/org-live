@@ -352,7 +352,52 @@ template {
 
 /* CUSTOM SITE CSS
    ========================================================================== */
+:root {
+  color-scheme: light dark;
+  --bg: #fff;
+  --fg: #111;
+  --rule: #000;
+  --gutter: #aaa;
+  --placeholder: #999;
+  --selection: rgb(0 100 255 / 0.25);
+  --h1: #1f4e9e;
+  --h2: #8a4b00;
+  --h3: #2e6b30;
+  --todo: #c62828;
+  --done: #2e7d32;
+  --accent: #b26a00;
+  --muted: #777;
+  --meta: #6a1b9a;
+  --verbatim: #00695c;
+  --table: #37474f;
+  --link: #1565c0;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg: #1c1b22;
+    --fg: #e6e6e6;
+    --rule: #888;
+    --gutter: #5c5c66;
+    --placeholder: #77777f;
+    --selection: rgb(80 150 255 / 0.35);
+    --h1: #79b8ff;
+    --h2: #ffab70;
+    --h3: #85e89d;
+    --todo: #f97583;
+    --done: #85e89d;
+    --accent: #e3b341;
+    --muted: #8b949e;
+    --meta: #c4a7f5;
+    --verbatim: #6fd8c2;
+    --table: #c9d1d9;
+    --link: #58a6ff;
+  }
+}
+
 body {
+  background-color: var(--bg);
+  color: var(--fg);
   font-family:
     Menlo,
     Consolas,
@@ -372,7 +417,7 @@ form {
   justify-content: center;
 }
 
-div:not(#preview) {
+.toolbar {
   display: flex;
   flex-direction: row;
   align-items: center;
@@ -396,19 +441,7 @@ button {
   width: 20%;
 }
 
-textarea {
-  background-color: inherit;
-  border: none;
-  border-bottom: 1px solid black;
-  border-radius: 0;
-  -webkit-box-shadow: none;
-  -moz-box-shadow: none;
-  box-shadow: none;
-  resize: none;
-  outline: none;
-}
-
-textarea,
+#source,
 #preview {
   height: 40vh;
   width: 100vw;
@@ -419,6 +452,95 @@ textarea,
   /*  white-space: pre-wrap; */
   overflow: scroll;
 }
+
+#source {
+  border-bottom: 1px solid var(--rule);
+}
+
+/* The textarea sits over #highlight with transparent text, so the two must
+   lay out identically. #highlight sets the height; the textarea fills it. */
+.layers {
+  position: relative;
+  min-height: 100%;
+}
+
+#highlight,
+#editor {
+  box-sizing: border-box;
+  margin: 0;
+  border: none;
+  border-radius: 0;
+  padding: 0 0 0 5ch;
+  font: inherit;
+  line-height: 1.4;
+  letter-spacing: normal;
+  tab-size: 8;
+  white-space: pre-wrap;
+  overflow-wrap: break-word;
+  word-break: normal;
+}
+
+#highlight {
+  counter-reset: ln;
+}
+
+#editor {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  overflow: hidden;
+  resize: none;
+  outline: none;
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+  background: transparent;
+  color: transparent;
+  -webkit-text-fill-color: transparent;
+  caret-color: var(--fg);
+}
+
+#editor::placeholder {
+  color: var(--placeholder);
+  -webkit-text-fill-color: var(--placeholder);
+}
+
+#editor::selection {
+  background: var(--selection);
+}
+
+.ln {
+  position: relative;
+  counter-increment: ln;
+}
+
+.ln::before {
+  content: counter(ln);
+  position: absolute;
+  left: -5ch;
+  width: 4ch;
+  text-align: right;
+  color: var(--gutter);
+}
+
+.h1 { color: var(--h1); font-weight: bold; }
+.h2 { color: var(--h2); font-weight: bold; }
+.h3 { color: var(--h3); font-weight: bold; }
+.todo { color: var(--todo); }
+.done { color: var(--done); }
+.pri, .bul, .cb { color: var(--accent); }
+.tag, .cmt, .drw, .fix, .hr { color: var(--muted); }
+.kw, .meta, .ts { color: var(--meta); }
+.blk, .v { color: var(--verbatim); }
+.tbl { color: var(--table); }
+.lnk, .fn { color: var(--link); text-decoration: underline; }
+
+#preview a { color: var(--link); }
+.b { font-weight: bold; }
+.i { font-style: italic; }
+.u { text-decoration: underline; }
+.s { text-decoration: line-through; }
 
 :modal {
   height: 90vh;
