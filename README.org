@@ -13,3 +13,17 @@ https://org.krz.sh
 * screenshots
 - screenshots/light_preview.png
 - screenshots/dark_preview.png
+
+* build
+Swift compiled to WebAssembly with [[https://elementary.codes][ElementaryUI]],
+rendering with [[https://gitbay.org/krz/org-swift][OrgSwift]].
+
+Requires the swift.org 6.4.2 toolchain, the 6.4.2 Wasm SDKs, and org-swift
+checked out at =../org-swift=.
+
+#+begin_src sh
+npm ci
+npm run build    # writes dist/
+#+end_src
+
+The page needs =script-src 'self' 'wasm-unsafe-eval'= if served with a CSP.

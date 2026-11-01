@@ -7,7 +7,7 @@ let package = Package(
   dependencies: [
     .package(url: "https://github.com/elementary-swift/elementary-ui.git", from: "0.9.0"),
     .package(url: "https://github.com/swiftwasm/JavaScriptKit.git", from: "0.62.0"),
-    .package(path: "../../org-swift"),
+    .package(path: "../org-swift"),
   ],
   targets: [
     .executableTarget(

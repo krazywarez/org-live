@@ -4,31 +4,12 @@
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1">
         <title>org-live</title>
-        <link rel="stylesheet" href="./static/styles.min.css" >
+        <link rel="stylesheet" href="./static/styles.css">
     </head>
     <body>
-        <form autocomplete>
-            <div>
-                <label for="editor">org-live</label>
-                <span class="spacer"></span>
-                <button type="button" onclick="saveHTML();">Save HTML</button>
-                <button type="button" onclick="saveOrg();">Save Org</button>
-            </div>
-            <textarea
-                id="editor"
-                name="editor"
-                autocapitalize="on"
-                autocorrect="on"
-                spellcheck="on"
-                placeholder="* Lorem Ipsum"
-                cols="80"
-                wrap="hard"
-                autofocus
-                required
-            ></textarea>
-        </form>
-	<div id="preview"></div>
-        <script src="./static/org.js"></script>
-        <script src="./static/app.js"></script>
+        <script type="module">
+            import { init } from "virtual:swift-wasm?js&product=OrgLive";
+            await init();
+        </script>
     </body>
 </html>

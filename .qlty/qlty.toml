@@ -11,8 +11,6 @@ exclude_patterns = [
   "**/generated/**",
   ".claude/**",
   "**/Pods/**",
-  # Vendored org-js build (Masafumi Oyamada, MIT).
-  "static/org.js",
 ]
 
 test_patterns = [
