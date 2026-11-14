@@ -1,5 +1,7 @@
 #+title: org-live
 
+support this project through [[https://github.com/sponsors/ccleberg][github sponsors]].
+
 * what
 org-live is a live environment for writing and editing org-mode.
 https://org.krz.sh
