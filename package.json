@@ -11,6 +11,6 @@
   },
   "devDependencies": {
     "@elementary-swift/vite-plugin-swift-wasm": "~0.3.0",
-    "vite": "^8.3.7"
+    "vite": "^8.3.8"
   }
 }
